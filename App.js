@@ -1,5 +1,5 @@
 import { StatusBar } from 'expo-status-bar';
-import { Text, View, Alert, Image } from 'react-native';
+import { Text, View, Alert, FlatList } from 'react-native';
 import styled from 'styled-components/native';
 import { Post } from './components/Post';
 import axios from 'axios';
@@ -30,15 +30,12 @@ export default function App() {
   return (
     <View>
       <HeaderBar/>
-      {
-        items.map((obj) => (
-          <Post
-            title={obj.title}
-            createdAt={obj.createdAt}
-            imageUrl={obj.imageUrl}
-          />
-        ))
-      }
+      <FlatList 
+      
+      data={items}
+      renderItem={({item}) => <Post title={item.title} imageUrl={item.imageUrl} createdAt={item.createdAt}/>}
+
+      />
       
       <StatusBar theme="auto" style="auto" />
       

@@ -22,6 +22,7 @@ const PostTitle = styled.Text`
 
 const PostDetais = styled.View`
  justify-content: center;
+ flex: 1;
 `;
 
 const PostDate = styled.Text`
