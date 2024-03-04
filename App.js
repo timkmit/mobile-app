@@ -1,27 +1,15 @@
 import { 
   View,
 } from 'react-native';
-import styled from 'styled-components/native';
-import { HomeScreen } from './screens/Home';
-import { FullPost } from './screens/FullPost';
 
-const HeaderBar = styled.View`
-height: 70px;
-background-color: rgba(0,0,0,0.1);
-`;
+import { Navigation } from './screens/Navigation';
+
 
 export default function App() {
 
 
   return (
-    <View>
-      
-      <HeaderBar/>
-      
-      <HomeScreen/>
-      
-
-    </View>
+    <Navigation />
   );
 }
 
