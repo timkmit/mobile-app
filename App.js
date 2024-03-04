@@ -1,10 +1,19 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
+import styled from 'styled-components/native';
+
+const Post = styled.View`
+  background-color: red;
+  height: 100px;
+  width: 100px;
+`;
+
 
 export default function App() {
   return (
     <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
+      <Post/>
+      
       <StatusBar style="auto" />
     </View>
   );
