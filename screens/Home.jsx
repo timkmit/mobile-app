@@ -11,6 +11,8 @@ import {
 import { Post } from '../components/Post';
 import axios from 'axios';
 import { useEffect, useState } from 'react';
+import { Loading } from '../components/Loading';
+import { FullPost } from './FullPost';
 
 
 export const HomeScreen = () => {
@@ -34,14 +36,7 @@ export const HomeScreen = () => {
   useEffect(fetchPosts, []);
 
   if(isLoading){
-    return <View style={{
-      flex: 1,
-      justifyContent: 'center',
-      alignItems: 'center'
-    }}>
-      <ActivityIndicator size="large"/>
-      <Text>Загрузка...</Text>
-    </View>
+    return <Loading/>
   }
 
   return (
@@ -50,7 +45,7 @@ export const HomeScreen = () => {
       refreshControl={<RefreshControl refreshing={isLoading} onRefresh={fetchPosts}/>}
       data={items}
       renderItem={({item}) => <TouchableOpacity>
-        <Post title={item.title} imageUrl={item.imageUrl} createdAt={item.createdAt}/>
+        <Post title={item.title} imageUrl={item.imageUrl} createdAt={item.createdAt} onPress={<FullPost postID={item.id}/>}/>
       </TouchableOpacity>}
       />
       <StatusBar theme="auto" style="auto" />

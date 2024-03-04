@@ -3,6 +3,7 @@ import {
 } from 'react-native';
 import styled from 'styled-components/native';
 import { HomeScreen } from './screens/Home';
+import { FullPost } from './screens/FullPost';
 
 const HeaderBar = styled.View`
 height: 70px;
@@ -16,6 +17,7 @@ export default function App() {
     <View>
       
       <HeaderBar/>
+      
       <HomeScreen/>
       
 
